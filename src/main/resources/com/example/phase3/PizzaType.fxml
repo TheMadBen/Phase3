@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.phase3.StoreController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.phase3.PizzaTypeController">
     <children>
         <Text layoutX="324.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Pizza Type">
             <font>
@@ -25,17 +25,17 @@
                 <Font size="20.0" />
             </font>
         </Button>
-      <CheckBox layoutX="368.0" layoutY="206.0" mnemonicParsing="false" text="Pepperoni">
+      <CheckBox fx:id="pepCheck" layoutX="368.0" layoutY="206.0" mnemonicParsing="false" onAction="#pepperoni" text="Pepperoni">
          <font>
             <Font size="30.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="369.0" layoutY="290.0" mnemonicParsing="false" text="Vegetable">
+      <CheckBox fx:id="vegCheck" layoutX="369.0" layoutY="290.0" mnemonicParsing="false" onAction="#vegetable" text="Vegetable">
          <font>
             <Font size="30.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="368.0" layoutY="371.0" mnemonicParsing="false" text="Cheese">
+      <CheckBox fx:id="cheeseCheck" layoutX="368.0" layoutY="371.0" mnemonicParsing="false" onAction="#cheese" text="Cheese">
          <font>
             <Font size="30.0" />
          </font>
