@@ -16,8 +16,10 @@ public class PizzaTypeController {
     private Scene scene;
     private Parent root;
 
+
     @FXML
     public Pizza pizza = new Pizza();
+    //public Order order
 
     @FXML
     private CheckBox pepCheck;
@@ -62,6 +64,8 @@ public class PizzaTypeController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
+
     }
 
     public void switchToMain(ActionEvent event)  throws IOException{

@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.Node;
 import javafx.stage.Stage;
 
+import static com.example.phase3.Store.testVar;
+
 public class MainController {
     private Stage stage;
     private Scene scene;
@@ -20,11 +22,14 @@ public class MainController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
+        System.out.println(testVar);
     }
 
     public void switchToLogIn(ActionEvent event)  throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        //stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = new Stage();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
