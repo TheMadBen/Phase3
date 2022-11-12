@@ -14,9 +14,17 @@ public class StatusController {
     private Scene scene;
     private Parent root;
 
+    public Customer customer;
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
     public void switchToPizza(ActionEvent event)  throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("PizzaType.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
+        //stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        stage = new Stage();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

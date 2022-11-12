@@ -19,7 +19,8 @@ public class PizzaTypeController {
 
     @FXML
     public Pizza pizza = new Pizza();
-    //public Order order
+    public Customer customer;
+
 
     @FXML
     private CheckBox pepCheck;
@@ -58,9 +59,30 @@ public class PizzaTypeController {
         }
     }
 
+    //set customer to pass objects through windows
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
     public void switchToToppings(ActionEvent event)  throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("Toppings.fxml"));
+
+        //customer.getOrder().getCart().add(pizza);
+
+        ToppingsController toppings = new ToppingsController();
+        toppings.setCustomer(customer);
+        toppings.setPizza(pizza);
+
+        //create loader to move data
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Toppings.fxml"));
+        loader.setController(toppings); //pass controller holding data to loader
+
+        //load root using new loader
+        Parent root = loader.load();
+
+        //Parent root = FXMLLoader.load(getClass().getResource("Toppings.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.close();
+
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -69,6 +91,7 @@ public class PizzaTypeController {
     }
 
     public void switchToMain(ActionEvent event)  throws IOException{
+
         Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);

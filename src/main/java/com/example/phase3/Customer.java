@@ -19,6 +19,10 @@ public class Customer {
         order = this.order;
     }
 
+    public Customer() {
+
+    }
+
     public int getAsuId() {
         return asuId;
     }

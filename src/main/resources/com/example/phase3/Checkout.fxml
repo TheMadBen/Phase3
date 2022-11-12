@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.phase3.CheckoutController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Text layoutX="396.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Checkout">
             <font>
@@ -30,7 +30,7 @@
                 <Font size="28.0" />
             </font>
         </Text>
-        <TextField layoutX="345.0" layoutY="239.0" prefHeight="35.0" prefWidth="234.0">
+        <TextField fx:id="idField" layoutX="345.0" layoutY="239.0" prefHeight="35.0" prefWidth="234.0">
             <font>
                 <Font size="16.0" />
             </font>
@@ -40,10 +40,11 @@
                 <Font size="20.0" />
             </font>
         </Button>
-      <TextField layoutX="345.0" layoutY="353.0" prefHeight="35.0" prefWidth="234.0">
+      <TextField fx:id="emailField" layoutX="345.0" layoutY="353.0" prefHeight="35.0" prefWidth="234.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
+      <Text fx:id="errorOutput" layoutX="732.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error MEssages appear here" />
     </children>
 </AnchorPane>

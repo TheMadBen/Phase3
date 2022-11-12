@@ -15,6 +15,8 @@ public class LoginController {
     private Parent root;
 
     public void switchToIncoming(ActionEvent event)  throws IOException{
+        System.out.println(Store.testVar);
+
         Parent root = FXMLLoader.load(getClass().getResource("Incoming.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);

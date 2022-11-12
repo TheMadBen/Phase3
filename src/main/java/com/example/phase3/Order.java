@@ -4,24 +4,30 @@ import java.util.*;
  *
  * @author gupta
  */
-// Create a Order class
+// Create an Order class
 public class Order {
     //attributes of Order class
 
     Date pickupTime;
-    Pizza[] cart;
+
+    ArrayList<Pizza> cart = new ArrayList<>();
+    //Pizza[] cart;
     double price;
     Status status;
     Customer customer;
 
     // Create a class constructor for the Order class
-    public Order(Date pickupTime, Pizza[] cart, double price, Status status, Customer customer) {
+    public Order(Date pickupTime, ArrayList<Pizza> cart, double price, Status status, Customer customer) {
         //initializes variables 
-        pickupTime = this.pickupTime;
-        cart = this.cart;
-        price = this.price;
-        status = this.status;
-        customer = this.customer;
+        this.pickupTime = pickupTime;
+        this.cart = cart;
+        this.price = price;
+        this.status = status;
+        this.customer = customer;
+    }
+
+    public Order() {
+    //cart = null;
     }
 
     public Date getPickupTime() {
@@ -32,11 +38,11 @@ public class Order {
         this.pickupTime = pickupTime;
     }
 
-    public Pizza[] getCart() {
+    public ArrayList<Pizza> getCart() {
         return cart;
     }
 
-    public void setCart(Pizza[] cart) {
+    public void setCart(ArrayList<Pizza> cart) {
         this.cart = cart;
     }
 
