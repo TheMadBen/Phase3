@@ -27,7 +27,7 @@
                 <Font size="20.0" />
             </font>
         </Button>
-      <ComboBox fx:id="timeBox" layoutX="387.0" layoutY="248.0" onAction="#seeTime" prefHeight="35.0" prefWidth="224.0" promptText="Pickup Time" />
+      <ComboBox fx:id="timeBox" layoutX="387.0" layoutY="248.0" onAction="#seeTime" prefHeight="35.0" prefWidth="224.0" promptText="Military Time" />
       <Text fx:id="errorTime" fill="#d42424" layoutX="651.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="235.515625">
          <font>
             <Font size="16.0" />

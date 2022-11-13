@@ -24,12 +24,25 @@ public class LoginController {
     private TextField passField;
     @FXML
     private Text errMsg;
+    @FXML
+    private Text errMsg1;
 
     public void switchToIncoming(ActionEvent event)  throws IOException{
 
-       if(!(userField.getText().contains("@") && userField.getText().contains("."))) {
-               errMsg.setText("Please enter a valid email");
+       if(!(userField.getText().contains("@") && userField.getText().contains(".")) && passField.getText().isEmpty()) {
+               errMsg.setText("Please Enter a Valid Email");
+               errMsg1.setText("Please Enter Password");
                return;
+       }
+       else if(!(userField.getText().contains("@") && userField.getText().contains("."))) {
+           errMsg.setText("Please Enter a Valid Email");
+           errMsg1.setText("");
+           return;
+       }
+       else if(passField.getText().isEmpty()) {
+           errMsg.setText("");
+           errMsg1.setText("Please Enter Password");
+           return;
        }
 
         Parent root = FXMLLoader.load(getClass().getResource("Incoming.fxml"));

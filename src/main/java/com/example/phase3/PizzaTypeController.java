@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.Node;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.control.CheckBox;
 
@@ -16,12 +17,13 @@ public class PizzaTypeController {
     private Scene scene;
     private Parent root;
 
-
+    boolean cont = false;
     @FXML
     public Pizza pizza = new Pizza();
     public Customer customer;
 
-
+    @FXML
+    private Text errorType;
     @FXML
     private CheckBox pepCheck;
     @FXML
@@ -32,30 +34,36 @@ public class PizzaTypeController {
         if(pepCheck.isSelected()) {
             pizza.setPepperoni(true);
             System.out.println(pizza.isPepperoni());
+            cont = true;
         }
         else {
             pizza.setPepperoni(false);
             System.out.println(pizza.isPepperoni());
+            cont = false;
         }
     }
     public void vegetable(ActionEvent event) {
         if(vegCheck.isSelected()) {
             pizza.setVegetables(true);
             System.out.println(pizza.isVegetables());
+            cont = true;
         }
         else {
             pizza.setVegetables(false);
             System.out.println(pizza.isVegetables());
+            cont = false;
         }
     }
     public void cheese(ActionEvent event) {
         if(cheeseCheck.isSelected()) {
             pizza.setCheese(true);
             System.out.println(pizza.isCheese());
+            cont = true;
         }
         else {
             pizza.setCheese(false);
             System.out.println(pizza.isCheese());
+            cont = false;
         }
     }
 
@@ -67,6 +75,11 @@ public class PizzaTypeController {
     public void switchToToppings(ActionEvent event)  throws IOException{
 
         //customer.getOrder().getCart().add(pizza);
+
+        if(!cont) {
+            errorType.setText("Please Select Pizza Type");
+            return;
+        }
 
         ToppingsController toppings = new ToppingsController();
         toppings.setCustomer(customer);

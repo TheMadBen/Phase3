@@ -42,5 +42,10 @@
             <Font size="30.0" />
          </font>
       </CheckBox>
+      <Text fx:id="errorType" fill="#c73535" layoutX="651.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="216.8489990234375">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
     </children>
 </AnchorPane>
