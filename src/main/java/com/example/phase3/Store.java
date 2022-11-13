@@ -8,6 +8,8 @@ public class Store {
 
     public static ArrayList<Order> orders = new ArrayList<>();
 
+    //orders.addItem
+
     public static boolean asuriteValidation(String asuID) {
         //parse string from text field to determine if valid
         //return true if valid, false if invalid
