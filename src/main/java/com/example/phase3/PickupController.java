@@ -45,6 +45,7 @@ public class PickupController{
         //once this step is reached, pizza should THEN be added to order
         if(pizza != null) {
             customer.getOrder().getCart().add(pizza);
+            customer.getOrder().setNumberOfPizzas(customer.getOrder().getNumberOfPizzas()+1);
         }
         if(!cont) {
             errorTime.setText("Please select a pickup time");

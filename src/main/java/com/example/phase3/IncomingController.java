@@ -35,8 +35,11 @@ public class IncomingController implements Initializable{
     private TableView table;
     //private ScrollPane scroll;
 
+    public void showCart(ActionEvent event) throws IOException {
 
-
+        TableColumn<Order, String> column1 = new TableColumn<>("Order Number");
+        column1.setCellValueFactory(new PropertyValueFactory<>("price"));
+    }
 
 
     public void switchToAccept(ActionEvent event)  throws IOException{
@@ -55,19 +58,22 @@ public class IncomingController implements Initializable{
 
         //table = new TableView<Order>(FXCollections.observableList(Store.orders));
 
-        TableColumn<Order, String> column1 = new TableColumn<>("Customer");
-        column1.setCellValueFactory(new PropertyValueFactory<>("customer.getAsuId()"));
+        TableColumn<Order, String> column1 = new TableColumn<>("Number of Pizzas");
+        column1.setCellValueFactory(new PropertyValueFactory<>("numberOfPizzas"));
 
-        TableColumn<Order, String> column2 = new TableColumn<>("Order Number");
+        TableColumn<Order, String> column2 = new TableColumn<>("Order Price");
         column2.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-        TableColumn<Order, String> column3 = new TableColumn<>("CheckBox");
-        column3.setCellValueFactory(new PropertyValueFactory<>("checkBox"));
+        TableColumn<Order, String> column3 = new TableColumn<>("Pickup Time");
+        column3.setCellValueFactory(new PropertyValueFactory<>("pickupTime"));
+
+        TableColumn<Order, String> column4 = new TableColumn<>("CheckBox");
+        column4.setCellValueFactory(new PropertyValueFactory<>("checkBox"));
 
         table.getColumns().remove(0, 1);
         table.getColumns().remove(0, 1);
 
-        table.getColumns().addAll(column1, column2, column3);
+        table.getColumns().addAll(column1, column2, column3, column4);
 
         Order temp = new Order();
         Customer cus = new Customer();
@@ -89,7 +95,7 @@ public class IncomingController implements Initializable{
 
         Store.orders.add(temp1);
 
-        ObservableList<Order> orderList = FXCollections.observableList(Store.orders);
+        ObservableList<Order> orderList = FXCollections.observableList(Store.submittedOrders);
 
         for (Order order : orderList){
             table.getItems().add(order);
@@ -100,16 +106,18 @@ public class IncomingController implements Initializable{
     public void acceptOrders(ActionEvent event)  throws IOException{
         for (Order order : Store.orders) {
             if (order.getCheckBox().isSelected()) {
-                Store.orders.remove(order);
+                Store.submittedOrders.remove(order);
+                Store.chefOrders.add(order);
                 table.getItems().remove(order);
             }
         }
     }
 
     public void refresh(ActionEvent event) throws IOException {
-        //table.getItems().
 
-        for (Order order : Store.orders){
+        table.getItems().clear();
+
+        for (Order order : Store.submittedOrders){
             table.getItems().add(order);
         }
     }

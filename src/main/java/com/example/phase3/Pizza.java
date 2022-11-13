@@ -9,6 +9,31 @@ public class Pizza {
     boolean olives;
     boolean extraCheese;
 
+
+    public String pizzaToString() {
+        String output = "Pizza Type: ";
+
+        if(pepperoni) output += "pepperoni ";
+
+        if(vegetables) output += "vegetable";
+
+        if(cheese) output += "cheese";
+
+        output += " toppings: ";
+
+        if(mushroom) output += "pepperoni ";
+
+        if(onion) output += "onion ";
+
+        if(olives) output += "olives ";
+
+        if(extraCheese) output += "extra cheese ";
+
+        output += "\n";
+
+        return output;
+
+    }
     public Pizza() {
     }
 
