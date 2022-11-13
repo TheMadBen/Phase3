@@ -2,10 +2,7 @@ package com.example.phase3;
 import javafx.scene.control.CheckBox;
 
 import java.util.*;
-/**
- *
- * @author gupta
- */
+
 // Create an Order class
 public class Order {
     //attributes of Order class
@@ -23,7 +20,7 @@ public class Order {
 
     // Create a class constructor for the Order class
     public Order(/*Date pickupTime,*/ ArrayList<Pizza> cart, double price, Status status, Customer customer) {
-        //initializes variables 
+        //initializes variables
         //this.pickupTime = pickupTime;
         this.cart = cart;
         this.price = price;
@@ -32,7 +29,7 @@ public class Order {
     }
 
     public Order() {
-    //cart = null;
+        //cart = null;
     }
 
     public int getNumberOfPizzas() {
