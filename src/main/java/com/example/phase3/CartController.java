@@ -3,10 +3,14 @@ package com.example.phase3;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.Node;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 public class CartController {
@@ -16,10 +20,27 @@ public class CartController {
 
     public Customer customer;
 
+    @FXML
+    private TableView pizzaDisplay;
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
 
+
+    public void setTable() {
+        TableColumn<Order, String> column1 = new TableColumn<>("Pizza ingredients");
+        column1.setCellValueFactory(new PropertyValueFactory<>(".pizzaToString()"));
+
+        TableColumn<Order, String> column2 = new TableColumn<>("CheckBox");
+        column2.setCellValueFactory(new PropertyValueFactory<>("CheckBox"));
+
+        pizzaDisplay.getColumns().addAll(column1, column2);
+
+        for (Pizza pizza: customer.getOrder().getCart()) {
+            pizzaDisplay.getItems().add(pizza);
+            //pizzaDisplay.getItems().
+        }
+    }
     public void switchToCheckout(ActionEvent event)  throws IOException{
         //pass values to be used in checkout
         CheckoutController checkout = new CheckoutController();

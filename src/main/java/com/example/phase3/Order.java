@@ -13,7 +13,8 @@ public class Order {
     String pickupTime;
 
     ArrayList<Pizza> cart = new ArrayList<>();
-    //Pizza[] cart;
+
+    int numberOfPizzas = 0;
     double price;
     Status status;
     Customer customer;
@@ -32,6 +33,14 @@ public class Order {
 
     public Order() {
     //cart = null;
+    }
+
+    public int getNumberOfPizzas() {
+        return numberOfPizzas;
+    }
+
+    public void setNumberOfPizzas(int input) {
+        numberOfPizzas = input;
     }
 
     public String getPickupTime() {
