@@ -9,9 +9,17 @@ public class Store {
     public static ArrayList<Order> orders = new ArrayList<>();
 
     public static boolean asuriteValidation(String asuID) {
-        //parse string from text field to determine if valid
-        //return true if valid, false if invalid
-
+        try {
+            int id = Integer.parseInt(asuID);
+            int length = String.valueOf(id).length();
+            if(length < 10 || length > 10) {
+                return false;
+            }
+            System.out.println(id);
+        }
+        catch (NumberFormatException ex){
+            return false;
+        }
         return true;
     }
 }

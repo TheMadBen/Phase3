@@ -45,6 +45,10 @@
             <Font size="16.0" />
          </font>
       </TextField>
-      <Text fx:id="errorOutput" layoutX="732.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error MEssages appear here" />
+      <Text fx:id="errorOutput" fill="#d22222" layoutX="639.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="207.8857421875">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
     </children>
 </AnchorPane>

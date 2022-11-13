@@ -42,7 +42,7 @@ public class CheckoutController {
         //if invalid id, break from function
         if(!proceed) {
             //prompt user to try again
-            errorOutput.setText("Asurite Verification Failed: Please \n enter a valid ASURITE ID.");
+            errorOutput.setText("ASURITE Verification Failed: Please enter a valid ASURITE ID.");
             return;
         }
 
