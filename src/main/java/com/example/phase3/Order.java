@@ -1,4 +1,6 @@
 package com.example.phase3;
+import javafx.scene.control.CheckBox;
+
 import java.util.*;
 /**
  *
@@ -8,7 +10,7 @@ import java.util.*;
 public class Order {
     //attributes of Order class
 
-    Date pickupTime;
+    String pickupTime;
 
     ArrayList<Pizza> cart = new ArrayList<>();
     //Pizza[] cart;
@@ -16,10 +18,12 @@ public class Order {
     Status status;
     Customer customer;
 
+    CheckBox checkBox = new CheckBox();
+
     // Create a class constructor for the Order class
-    public Order(Date pickupTime, ArrayList<Pizza> cart, double price, Status status, Customer customer) {
+    public Order(/*Date pickupTime,*/ ArrayList<Pizza> cart, double price, Status status, Customer customer) {
         //initializes variables 
-        this.pickupTime = pickupTime;
+        //this.pickupTime = pickupTime;
         this.cart = cart;
         this.price = price;
         this.status = status;
@@ -30,11 +34,11 @@ public class Order {
     //cart = null;
     }
 
-    public Date getPickupTime() {
+    public String getPickupTime() {
         return pickupTime;
     }
 
-    public void setPickupTime(Date pickupTime) {
+    public void setPickupTime(String pickupTime) {
         this.pickupTime = pickupTime;
     }
 
@@ -69,5 +73,12 @@ public class Order {
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
-    
+
+    public CheckBox getCheckBox() {
+        return checkBox;
+    }
+
+    public void setCheckBox(CheckBox checkBox) {
+        this.checkBox = checkBox;
+    }
 }
