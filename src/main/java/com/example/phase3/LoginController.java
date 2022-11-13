@@ -22,7 +22,6 @@ public class LoginController {
     private TextField userField;
     @FXML
     private TextField passField;
-
     @FXML
     private Text errMsg;
 
@@ -33,25 +32,11 @@ public class LoginController {
 
         boolean proceed = true;
 
-
-
-
-
-        //if(!user)
-       if(!(userField.getText().contains("@") && userField.getText().contains(".com") )) {
+       if(!(userField.getText().contains("@") && userField.getText().contains(".com"))) {
                System.out.println("fd");
                errMsg.setText("Please enter a valid email");
-
-
                return;
        }
-
-
-
-
-
-
-
 
         Parent root = FXMLLoader.load(getClass().getResource("Incoming.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
