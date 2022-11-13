@@ -103,15 +103,21 @@ public class ToppingsController {
     public void switchToPickup(ActionEvent event)  throws IOException{
         //add pizza to order
         //customer.getOrder().getCart().add(pizza);
+        if(pizza != null) {
+            System.out.println("pizza added to cart");
+            customer.getOrder().getCart().add(pizza);
+            customer.getOrder().setNumberOfPizzas(customer.getOrder().getNumberOfPizzas()+1);
+        }
+
 
         //create controller for object passing
-        PickupController pickup = new PickupController();
-        pickup.setCustomer(customer); //pass customer to next window
-        pickup.setPizza(pizza); //pass pizza to next window
+        CartController cart = new CartController();
+        cart.setCustomer(customer); //pass customer to next window
+       // pickup.setPizza(pizza); //pass pizza to next window
 
         //create loader to move data
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Pickup.fxml"));
-        loader.setController(pickup); //pass controller holding data to loader
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Cart.fxml"));
+        loader.setController(cart); //pass controller holding data to loader
 
 
         //Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("PizzaType.fxml"));

@@ -16,7 +16,7 @@ public class Order {
 
     int numberOfPizzas = 0;
     double price;
-    Status status;
+    Status status = Status.READY_TO_COOK;
     Customer customer;
 
     CheckBox checkBox = new CheckBox();

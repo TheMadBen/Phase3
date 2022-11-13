@@ -29,35 +29,36 @@ public class PickupController{
     boolean cont = false;
     ObservableList<String> time = FXCollections.observableArrayList("0000", "0100", "0200", "0300", "0400", "0500", "0600", "0700", "0800", "0900", "1100", "1200", "1300", "1400", "1500", "1600", "1700", "1800", "1900", "2000", "2100", "2200", "2300");
     public Customer customer;
-    public Pizza pizza;
+    //public Pizza pizza;
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
 
-    public void setPizza(Pizza pizza) {
+/*    public void setPizza(Pizza pizza) {
         this.pizza = pizza;
-    }
+    }*/
 
     public void switchToCart(ActionEvent event)  throws IOException{
         //be sure to change pizza pickup time here
 
         //once this step is reached, pizza should THEN be added to order
-        if(pizza != null) {
+      /*  if(pizza != null) {
+            System.out.println("pizza added to cart");
             customer.getOrder().getCart().add(pizza);
             customer.getOrder().setNumberOfPizzas(customer.getOrder().getNumberOfPizzas()+1);
-        }
+        }*/
         if(!cont) {
             errorTime.setText("Please select a pickup time");
             return;
         }
 
         //now, only customer need be passed moving forward
-        CartController cart = new CartController();
-        cart.setCustomer(customer); //pass customer to next window
+        CheckoutController checkout = new CheckoutController();
+        checkout.setCustomer(customer); //pass customer to next window
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Cart.fxml"));
-        loader.setController(cart); //pass controller holding data to loader
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Checkout.fxml"));
+        loader.setController(checkout); //pass controller holding data to loader
 
         Parent root = loader.load();
 
@@ -71,7 +72,7 @@ public class PickupController{
     public void switchToToppings(ActionEvent event)  throws IOException{
         ToppingsController toppings = new ToppingsController();
         toppings.setCustomer(customer);
-        toppings.setPizza(pizza);
+        //toppings.setPizza(pizza);
 
         //create loader to move data
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Toppings.fxml"));

@@ -37,6 +37,8 @@ public class SeeOrderController {
             System.out.println("Ran");
             table.getItems().add(pizza.pizzaToString());
         }
+
+        table.getItems().add("Status: " + order.getStatus());
     }
 
     public void switchToAccept(ActionEvent event)  throws IOException{

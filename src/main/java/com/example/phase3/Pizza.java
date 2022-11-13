@@ -1,5 +1,7 @@
 package com.example.phase3;
 
+import javafx.scene.control.CheckBox;
+
 public class Pizza {
     boolean pepperoni;
     boolean vegetables;
@@ -9,6 +11,9 @@ public class Pizza {
     boolean olives;
     boolean extraCheese;
 
+    String output = "";
+
+    CheckBox checkBox = new CheckBox();
 
     public String pizzaToString() {
         String output = "Pizza Type: ";
@@ -21,7 +26,7 @@ public class Pizza {
 
         output += " toppings: ";
 
-        if(mushroom) output += "pepperoni ";
+        if(mushroom) output += "mushroom ";
 
         if(onion) output += "onion ";
 
@@ -101,5 +106,21 @@ public class Pizza {
 
     public void setExtraCheese(boolean extraCheese) {
         this.extraCheese = extraCheese;
+    }
+
+    public CheckBox getCheckBox() {
+        return checkBox;
+    }
+
+    public void setCheckBox(CheckBox checkBox) {
+        this.checkBox = checkBox;
+    }
+
+    public String getOutput() {
+        return output;
+    }
+
+    public void setOutput(String output) {
+        this.output = output;
     }
 }

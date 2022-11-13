@@ -28,12 +28,12 @@
                 <Font size="20.0" />
             </font>
         </Button>
-      <Button layoutX="270.0" layoutY="594.0" mnemonicParsing="false" onAction="#switchToPizza" text="Remove">
+      <Button layoutX="270.0" layoutY="594.0" mnemonicParsing="false" onAction="#removePizza" text="Remove">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="470.0" layoutY="594.0" mnemonicParsing="false" onAction="#switchToPizza" text="Edit">
+      <Button layoutX="441.0" layoutY="594.0" mnemonicParsing="false" onAction="#setTable" text="Display Order">
          <font>
             <Font size="20.0" />
          </font>
