@@ -8,6 +8,8 @@ public class Store {
 
     public static ArrayList<Order> orders = new ArrayList<>();
 
+    //orders.addItem
+
     public static boolean asuriteValidation(String asuID) {
         try {
             int id = Integer.parseInt(asuID);
