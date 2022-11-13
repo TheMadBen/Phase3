@@ -162,6 +162,7 @@ public class AcceptController implements Initializable {
             if (order.getCheckBox().isSelected()) {
                 orderCur = order;
                 orderCur.setStatus(Status.READY);
+                order.getCheckBox().setSelected(false);
                 break;
             }
         }

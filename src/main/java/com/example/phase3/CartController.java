@@ -154,4 +154,30 @@ public class CartController {
         stage.setScene(scene);
         stage.show();
     }
+
+    public CartController(ActionEvent event, Customer customer) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(
+                "cart.fxml"));
+        //fxmlLoader.setRoot(this);
+        fxmlLoader.setController(this);
+
+        this.setCustomer(customer);
+        Parent root = fxmlLoader.load();
+        try {
+            //load root using new loader
+            //Parent root = fxmlLoader.load();
+            setTable(new ActionEvent());
+        } catch (IOException exception) {
+            throw new RuntimeException(exception);
+        }
+
+       /* //load root using new loader
+        Parent root = fxmlLoader.load();*/
+
+        //Parent root = FXMLLoader.load(getClass().getResource("Pickup.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }

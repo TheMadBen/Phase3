@@ -30,6 +30,7 @@ public class PizzaTypeController {
     private CheckBox vegCheck;
     @FXML
     private CheckBox cheeseCheck;
+
     public void pepperoni(ActionEvent event) {
         if(pepCheck.isSelected()) {
             pizza.setPepperoni(true);
@@ -111,4 +112,6 @@ public class PizzaTypeController {
         stage.setScene(scene);
         stage.show();
     }
+
+
 }

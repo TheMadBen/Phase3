@@ -111,14 +111,15 @@ public class ToppingsController {
 
 
         //create controller for object passing
-        CartController cart = new CartController();
-        cart.setCustomer(customer); //pass customer to next window
+        CartController cart = new CartController(event, customer);
+        //cart.setCustomer(customer); //pass customer to next window
        // pickup.setPizza(pizza); //pass pizza to next window
 
-        //create loader to move data
+
+  /*      //create loader to move data
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Cart.fxml"));
         loader.setController(cart); //pass controller holding data to loader
-
+        //cart.setTable(event);
 
         //Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("PizzaType.fxml"));
 
@@ -129,6 +130,6 @@ public class ToppingsController {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        stage.show();
+        stage.show();*/
     }
 }
