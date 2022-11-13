@@ -24,7 +24,7 @@ public class Pizza {
 
         if(cheese) output += "cheese";
 
-        output += " toppings: ";
+        output += "\nToppings: ";
 
         if(mushroom) output += "mushroom ";
 
@@ -33,6 +33,8 @@ public class Pizza {
         if(olives) output += "olives ";
 
         if(extraCheese) output += "extra cheese ";
+
+        if(!mushroom && !onion && !olives && !extraCheese) output+= "none added";
 
         output += "\n";
 
