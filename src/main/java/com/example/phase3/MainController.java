@@ -45,7 +45,8 @@ public class MainController {
         Parent root = loader.load();
 
         //root.setController(pizzaTypeController);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+       // stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = new Stage();
         stage.close();
 
         scene = new Scene(root);

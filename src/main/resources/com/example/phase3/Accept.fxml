@@ -1,29 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.phase3.AcceptController">
+<AnchorPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.phase3.AcceptController">
     <children>
         <Text layoutX="328.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Accepted Orders">
             <font>
                 <Font size="50.0" />
             </font>
         </Text>
-        <Button layoutX="435.0" layoutY="597.0" mnemonicParsing="false" onAction="#switchToSeeOrder" text="Set to Cook">
+        <Button fx:id="setToCook" layoutX="534.0" layoutY="598.0" mnemonicParsing="false" onAction="#setCook" text="Set to Cook">
          <font>
             <Font size="20.0" />
          </font></Button>
         <Separator layoutX="328.0" layoutY="104.0" prefHeight="2.0" prefWidth="369.0" />
-        <Text layoutX="688.0" layoutY="566.0" strokeType="OUTSIDE" strokeWidth="0.0" text="this is a scroll pane" />
-      <ScrollPane layoutX="191.0" layoutY="128.0" prefHeight="393.0" prefWidth="619.0">
-         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="419.0" prefWidth="641.0" />
-         </content>
-      </ScrollPane>
+      <TableView fx:id="table" layoutX="29.0" layoutY="176.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="475.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <Button layoutX="247.0" layoutY="598.0" mnemonicParsing="false" onAction="#switchToSeeOrder" prefHeight="39.0" prefWidth="163.0" text="View Order">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="57.0" layoutY="598.0" mnemonicParsing="false" onAction="#refresh" prefHeight="39.0" prefWidth="146.0" text="Refresh">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <TextArea fx:id="orderDisplay" editable="false" layoutX="575.0" layoutY="179.0" prefHeight="384.0" prefWidth="322.0" />
+      <Button fx:id="setReady" layoutX="697.0" layoutY="598.0" mnemonicParsing="false" onAction="#setReady" prefHeight="39.0" prefWidth="163.0" text="Order is Ready">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

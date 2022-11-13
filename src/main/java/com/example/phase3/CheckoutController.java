@@ -65,7 +65,11 @@ public class CheckoutController {
         customer.setEmail(emailField.getText());
         customer.getOrder().setStatus(Status.ACCEPTED);
 
+        //calculate price
+        customer.getOrder().setPrice(customer.getOrder().getCart().size()*Store.pricePerPizza);
+
         //order validated, push order to store Global Array
+        Store.submittedOrders.add(customer.getOrder());
         Store.orders.add(customer.getOrder());
 
         //pass forward values to be used to send in status updates
