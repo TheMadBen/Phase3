@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Store {
     public static int testVar = 0;
     public static int testing = 1;
+
     public static double pricePerPizza = 14.00;
 
     public static ArrayList<Order> orders = new ArrayList<>();

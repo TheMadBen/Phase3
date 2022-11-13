@@ -104,10 +104,11 @@ public class IncomingController implements Initializable{
     }
 
     public void acceptOrders(ActionEvent event)  throws IOException{
-        for (Order order : Store.orders) {
+        for (Order order : Store.submittedOrders) {
             if (order.getCheckBox().isSelected()) {
                 Store.submittedOrders.remove(order);
                 Store.chefOrders.add(order);
+                order.setStatus(Status.READY_TO_COOK);
                 table.getItems().remove(order);
             }
         }

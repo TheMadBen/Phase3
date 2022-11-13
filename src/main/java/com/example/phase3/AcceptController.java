@@ -25,13 +25,8 @@ public class AcceptController implements Initializable {
     private Scene scene;
     private Parent root;
 
-    private Order orderCur = null;
-
     @FXML
     private TableView table;
-
-    @FXML
-    private Button viewOrderButton;
 
     @FXML
     private Button setToCook;
@@ -41,6 +36,8 @@ public class AcceptController implements Initializable {
 
 
     public void switchToSeeOrder(ActionEvent event)  throws IOException{
+        Order orderCur = null;
+
         for (Order order : Store.chefOrders) {
             if (order.getCheckBox().isSelected()) {
                 orderCur = order;
@@ -50,6 +47,7 @@ public class AcceptController implements Initializable {
         if (orderCur == null) {
             //output "please select an order"
             //break function
+            orderDisplay.setText("");
             return;
         }
 
@@ -114,35 +112,17 @@ public class AcceptController implements Initializable {
 
         table.getColumns().addAll(column1, column2, column3, column4, column5);
 
-        Order temp = new Order();
-        Customer cus = new Customer();
+        //ObservableList<Order> orderList = FXCollections.observableList(Store.chefOrders);
 
-        cus.setAsuId(1111);
-        temp.setPrice(11.1);
+        table.getItems().clear();
 
-        temp.setCustomer(cus);
-
-        Store.orders.add(temp);
-
-        Order temp1 = new Order();
-        Customer cus1 = new Customer();
-
-        cus1.setAsuId(1111);
-        temp1.setPrice(11.1);
-
-        temp.setCustomer(cus1);
-
-        Store.orders.add(temp1);
-
-        ObservableList<Order> orderList = FXCollections.observableList(Store.chefOrders);
-
-        for (Order order : orderList){
+        for (Order order : Store.chefOrders){
             table.getItems().add(order);
         }
         // scroll.getChildrenUnmodifiable().add(table);
     }
 
-    public void setSetToCook(ActionEvent event)  throws IOException{
+    /*public void setSetToCook(ActionEvent event)  throws IOException{
         for (Order order : Store.chefOrders) {
             if (order.getCheckBox().isSelected()) {
                 Store.chefOrders.remove(order);
@@ -150,7 +130,7 @@ public class AcceptController implements Initializable {
                 table.getItems().remove(order);
             }
         }
-    }
+    }*/
 
     public void refresh(ActionEvent event) throws IOException {
 
@@ -162,6 +142,36 @@ public class AcceptController implements Initializable {
     }
 
     public void setCook(ActionEvent event) throws IOException {
+        Order orderCur = null;
+
+        for (Order order : Store.chefOrders) {
+            if (order.getCheckBox().isSelected()) {
+                orderCur = order;
+                orderCur.setStatus(Status.COOKING);
+            }
+        }
+
+        refresh(event);
+
+    }
+
+    public void setReady(ActionEvent event) throws IOException {
+        Order orderCur = null;
+
+        for (Order order : Store.chefOrders) {
+            if (order.getCheckBox().isSelected()) {
+                orderCur = order;
+                orderCur.setStatus(Status.READY);
+                break;
+            }
+        }
+
+        Store.chefOrders.remove(orderCur);
+
+        /****SIMULATE EMAIL****/
+        System.out.println("Email sent to email address" + orderCur.getCustomer().getEmail());
+
+        refresh(event);
 
     }
 }

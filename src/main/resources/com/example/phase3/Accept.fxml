@@ -16,24 +16,31 @@
                 <Font size="50.0" />
             </font>
         </Text>
-        <Button fx:id="setToCook" layoutX="435.0" layoutY="597.0" mnemonicParsing="false" onAction="#setCook" text="Set to Cook">
+        <Button fx:id="setToCook" layoutX="534.0" layoutY="598.0" mnemonicParsing="false" onAction="#setCook" text="Set to Cook">
          <font>
             <Font size="20.0" />
          </font></Button>
         <Separator layoutX="328.0" layoutY="104.0" prefHeight="2.0" prefWidth="369.0" />
-        <Text layoutX="688.0" layoutY="566.0" strokeType="OUTSIDE" strokeWidth="0.0" text="this is a scroll pane" />
-      <TableView fx:id="table" layoutX="29.0" layoutY="129.0" prefHeight="390.0" prefWidth="458.0">
+      <TableView fx:id="table" layoutX="29.0" layoutY="176.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="475.0">
         <columns>
           <TableColumn prefWidth="75.0" text="C1" />
           <TableColumn prefWidth="75.0" text="C2" />
         </columns>
       </TableView>
-      <Button fx:id="viewOrderBtn" layoutX="197.0" layoutY="597.0" mnemonicParsing="false" onAction="#switchToSeeOrder" prefHeight="39.0" prefWidth="163.0" text="View Order">
+      <Button layoutX="247.0" layoutY="598.0" mnemonicParsing="false" onAction="#switchToSeeOrder" prefHeight="39.0" prefWidth="163.0" text="View Order">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="refreshBtn" layoutX="623.0" layoutY="597.0" mnemonicParsing="false" onAction="#refresh" prefHeight="39.0" prefWidth="138.0" text="Refresh" />
-      <TextArea fx:id="orderDisplay" editable="false" layoutX="547.0" layoutY="129.0" prefHeight="384.0" prefWidth="349.0" />
+      <Button layoutX="57.0" layoutY="598.0" mnemonicParsing="false" onAction="#refresh" prefHeight="39.0" prefWidth="146.0" text="Refresh">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <TextArea fx:id="orderDisplay" editable="false" layoutX="575.0" layoutY="179.0" prefHeight="384.0" prefWidth="322.0" />
+      <Button fx:id="setReady" layoutX="697.0" layoutY="598.0" mnemonicParsing="false" onAction="#setReady" prefHeight="39.0" prefWidth="163.0" text="Order is Ready">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

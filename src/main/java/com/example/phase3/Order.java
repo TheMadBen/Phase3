@@ -60,6 +60,7 @@ public class Order {
     }
 
     public double getPrice() {
+        price = cart.size() * Store.pricePerPizza;
         return price;
     }
 

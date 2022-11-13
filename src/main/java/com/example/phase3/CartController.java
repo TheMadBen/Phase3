@@ -11,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class CartController {
@@ -22,6 +23,9 @@ public class CartController {
 
     @FXML
     private TableView pizzaDisplay;
+
+    @FXML
+    private Text priceField;
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
@@ -38,9 +42,34 @@ public class CartController {
         }
 
         customer.getOrder().getCart().remove(toDelete);
+
+        customer.getOrder().setNumberOfPizzas(customer.getOrder().getNumberOfPizzas()-1);
+
         setTable(new ActionEvent());
 
     }
+
+    public void editPizza(ActionEvent event) throws IOException {
+        //find selected pizza and remove
+        Pizza toDelete = null;
+
+        for (Pizza pizza: customer.getOrder().getCart()) {
+            if(pizza.getCheckBox().isSelected()) {
+                toDelete = pizza;
+            }
+        }
+
+        if(toDelete == null) return;
+
+        customer.getOrder().setNumberOfPizzas(customer.getOrder().getNumberOfPizzas()-1);
+
+        customer.getOrder().getCart().remove(toDelete);
+        setTable(new ActionEvent());
+
+        switchToPizza(event);
+    }
+
+
     public void setTable(ActionEvent event) throws IOException{
         TableColumn<Pizza, String> column1 = new TableColumn<>("Pizza ingredients");
         column1.setCellValueFactory(new PropertyValueFactory<>("output"));
@@ -59,6 +88,8 @@ public class CartController {
             pizzaDisplay.getItems().add(pizza);
             //pizzaDisplay.getItems().
         }
+
+        priceField.setText(String.format("$%.2f", customer.getOrder().getPrice()));
     }
     public void switchToCheckout(ActionEvent event)  throws IOException{
         //pass values to be used in checkout
