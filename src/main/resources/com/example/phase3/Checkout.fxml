@@ -45,7 +45,12 @@
             <Font size="16.0" />
          </font>
       </TextField>
-      <Text fx:id="errorOutput" fill="#d22222" layoutX="639.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="207.8857421875">
+      <Text fx:id="errorOutput" fill="#d22222" layoutX="639.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="233.9999999999999">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="errorOutput1" fill="#d22222" layoutX="639.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="207.8857421875">
          <font>
             <Font size="16.0" />
          </font>

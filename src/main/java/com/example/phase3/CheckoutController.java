@@ -21,10 +21,10 @@ public class CheckoutController {
 
     @FXML
     private Text errorOutput;
-
+    @FXML
+    private Text errorOutput1;
     @FXML
     private TextField idField;
-
     @FXML
     private TextField emailField;
 
@@ -40,9 +40,20 @@ public class CheckoutController {
 
 
         //if invalid id, break from function
-        if(!proceed) {
+        if((!proceed) && (!(emailField.getText().contains("@") && emailField.getText().contains(".edu")))) {
             //prompt user to try again
             errorOutput.setText("ASURITE Verification Failed: Please enter a valid ASURITE ID.");
+            errorOutput1.setText("Please enter a valid email");
+            return;
+        }
+        else if(!(emailField.getText().contains("@") && emailField.getText().contains(".edu"))) {
+            errorOutput.setText("");
+            errorOutput1.setText("Please enter a valid email");
+            return;
+        }
+        else if(!proceed){
+            errorOutput.setText("ASURITE Verification Failed: Please enter a valid ASURITE ID.");
+            errorOutput1.setText("");
             return;
         }
 

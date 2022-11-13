@@ -26,14 +26,8 @@ public class LoginController {
     private Text errMsg;
 
     public void switchToIncoming(ActionEvent event)  throws IOException{
-        System.out.println(Store.testVar);
-        userField.getText();
-        passField.getText();
 
-        boolean proceed = true;
-
-       if(!(userField.getText().contains("@") && userField.getText().contains(".com"))) {
-               System.out.println("fd");
+       if(!(userField.getText().contains("@") && userField.getText().contains("."))) {
                errMsg.setText("Please enter a valid email");
                return;
        }
