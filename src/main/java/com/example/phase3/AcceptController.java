@@ -60,6 +60,8 @@ public class AcceptController implements Initializable {
             //table.getItems().add(pizza.pizzaToString());
         }
 
+        outputOrder += "Status: " +  orderCur.getStatus();
+
         orderDisplay.setText(outputOrder);
 
 
@@ -104,10 +106,13 @@ public class AcceptController implements Initializable {
         TableColumn<Order, String> column4 = new TableColumn<>("CheckBox");
         column4.setCellValueFactory(new PropertyValueFactory<>("checkBox"));
 
+        TableColumn<Order, String> column5 = new TableColumn<>("Status");
+        column5.setCellValueFactory(new PropertyValueFactory<>("status"));
+
         table.getColumns().remove(0, 1);
         table.getColumns().remove(0, 1);
 
-        table.getColumns().addAll(column1, column2, column3, column4);
+        table.getColumns().addAll(column1, column2, column3, column4, column5);
 
         Order temp = new Order();
         Customer cus = new Customer();
