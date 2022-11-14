@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Text layoutX="324.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Toppings">
             <font>
@@ -30,17 +30,17 @@
                 <Font size="30.0" />
             </font>
         </CheckBox>
-        <CheckBox fx:id="onionCheck" layoutX="367.0" layoutY="290.0" mnemonicParsing="false" onAction="#onion" text="Onion">
+        <CheckBox fx:id="onionCheck" layoutX="368.0" layoutY="312.0" mnemonicParsing="false" onAction="#onion" text="Onion">
             <font>
                 <Font size="30.0" />
             </font>
         </CheckBox>
-        <CheckBox fx:id="olivesCheck" layoutX="368.0" layoutY="371.0" mnemonicParsing="false" onAction="#olives" text="Olives">
+        <CheckBox fx:id="olivesCheck" layoutX="367.0" layoutY="412.0" mnemonicParsing="false" onAction="#olives" text="Olives">
             <font>
                 <Font size="30.0" />
             </font>
         </CheckBox>
-      <CheckBox fx:id="extraCheeseCheck" layoutX="368.0" layoutY="452.0" mnemonicParsing="false" onAction="#extraCheese" text="Extra Cheese">
+      <CheckBox fx:id="extraCheeseCheck" layoutX="367.0" layoutY="519.0" mnemonicParsing="false" onAction="#extraCheese" text="Extra Cheese">
          <font>
             <Font size="30.0" />
          </font>

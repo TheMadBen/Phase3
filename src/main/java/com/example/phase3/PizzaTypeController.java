@@ -34,24 +34,20 @@ public class PizzaTypeController {
     public void pepperoni(ActionEvent event) {
         if(pepCheck.isSelected()) {
             pizza.setPepperoni(true);
-            System.out.println(pizza.isPepperoni());
             cont = true;
         }
         else {
             pizza.setPepperoni(false);
-            System.out.println(pizza.isPepperoni());
             cont = false;
         }
     }
     public void vegetable(ActionEvent event) {
         if(vegCheck.isSelected()) {
             pizza.setVegetables(true);
-            System.out.println(pizza.isVegetables());
             cont = true;
         }
         else {
             pizza.setVegetables(false);
-            System.out.println(pizza.isVegetables());
             cont = false;
         }
     }

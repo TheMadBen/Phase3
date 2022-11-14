@@ -9,7 +9,7 @@
 
 <!--fx:controller="com.example.phase3.PickupController"-->
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Text layoutX="294.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Pickup Time">
             <font>
@@ -22,13 +22,13 @@
                 <Font size="20.0" />
             </font>
         </Button>
-        <Button layoutX="115.0" layoutY="594.0" mnemonicParsing="false" onAction="#switchToToppings" text="Back">
+        <Button layoutX="115.0" layoutY="594.0" mnemonicParsing="false" onAction="#switchToBack" text="Back">
             <font>
                 <Font size="20.0" />
             </font>
         </Button>
       <ComboBox fx:id="timeBox" layoutX="387.0" layoutY="248.0" onAction="#seeTime" prefHeight="35.0" prefWidth="224.0" promptText="Military Time" />
-      <Text fx:id="errorTime" fill="#d42424" layoutX="651.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="235.515625">
+      <Text fx:id="errorTime" fill="#ff1e1e" layoutX="382.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="235.515625">
          <font>
             <Font size="16.0" />
          </font>

@@ -9,7 +9,7 @@
 
 <!-- fx:controller="com.example.phase3.CartController"-->
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Text layoutX="337.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cart">
             <font>
@@ -22,17 +22,12 @@
                 <Font size="20.0" />
             </font>
         </Button>
-      <Button layoutX="40.0" layoutY="594.0" mnemonicParsing="false" onAction="#removePizza" text="Remove">
+      <Button layoutX="76.0" layoutY="594.0" mnemonicParsing="false" onAction="#removePizza" text="Remove">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="575.0" layoutY="594.0" mnemonicParsing="false" onAction="#setTable" text="Display Order">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <Button layoutX="382.0" layoutY="594.0" mnemonicParsing="false" onAction="#switchToPizza" text="Order More">
+      <Button layoutX="556.0" layoutY="594.0" mnemonicParsing="false" onAction="#switchToPizza" text="Order More">
          <font>
             <Font size="20.0" />
          </font>
@@ -43,7 +38,7 @@
          </font>
       </Text>
       <TableView fx:id="pizzaDisplay" layoutX="76.0" layoutY="161.0" prefHeight="379.0" prefWidth="611.0" />
-      <Button layoutX="189.0" layoutY="594.0" mnemonicParsing="false" onAction="#editPizza" prefHeight="39.0" prefWidth="124.0" text="Edit Pizza">
+      <Button layoutX="304.0" layoutY="594.0" mnemonicParsing="false" onAction="#editPizza" prefHeight="39.0" prefWidth="124.0" text="Edit Pizza">
          <font>
             <Font size="20.0" />
          </font></Button>

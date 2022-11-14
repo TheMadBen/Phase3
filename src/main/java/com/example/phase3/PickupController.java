@@ -31,6 +31,7 @@ public class PickupController{
     @FXML
     private Text errorTime;
     boolean cont = false;
+    boolean cont1 = false;
     ObservableList<String> time = FXCollections.observableArrayList("00:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00");
     public Customer customer;
     //public Pizza pizza;
@@ -53,7 +54,12 @@ public class PickupController{
             customer.getOrder().setNumberOfPizzas(customer.getOrder().getNumberOfPizzas()+1);
         }*/
         if(!cont) {
-            errorTime.setText("Please Select a Valid Pickup Time");
+            errorTime.setText("Please Select a Pickup Time");
+            return;
+        }
+        else if(!cont1) {
+            errorTime.setText("");
+            errorTime.setText("Please Select a Pickup Time 30 min after " + currentTime());
             return;
         }
 
@@ -73,14 +79,14 @@ public class PickupController{
         stage.show();
     }
 
-    public void switchToToppings(ActionEvent event)  throws IOException{
-        ToppingsController toppings = new ToppingsController();
-        toppings.setCustomer(customer);
+    public void switchToBack(ActionEvent event)  throws IOException{
+        CartController cart = new CartController(event, customer);
+        //cart.setCustomer(customer);
         //toppings.setPizza(pizza);
 
         //create loader to move data
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Toppings.fxml"));
-        loader.setController(toppings); //pass controller holding data to loader
+        /*FXMLLoader loader = new FXMLLoader(getClass().getResource("Cart.fxml"));
+        loader.setController(cart); //pass controller holding data to loader
 
         //load root using new loader
         Parent root = loader.load();
@@ -89,7 +95,7 @@ public class PickupController{
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        stage.show();
+        stage.show();*/
     }
 
     @FXML
@@ -98,44 +104,43 @@ public class PickupController{
         timeBox.getItems().addAll(time);
     }
     public void seeTime(ActionEvent event) {
-        boolean currTime = true;
-
         Object temp = timeBox.getValue();
         String selected = temp.toString();
         customer.getOrder().setPickupTime(selected);
 
-        int cTime = timeToInt(currentTime(), currTime);
-        currTime = false;
-        int sTime = timeToInt(customer.getOrder().getPickupTime(), currTime);
+        int cTime = timeToInt(currentTime());
+        int sTime = timeToInt(customer.getOrder().getPickupTime());
 
-        if(sTime - cTime > 45) {
+        if(!timeBox.getSelectionModel().isEmpty()) {
             cont = true;
         }
         else {
             cont = false;
         }
+
+        if(sTime - cTime > 30) {
+            cont1 = true;
+        }
+        else {
+            cont1 = false;
+        }
     }
     public String currentTime() {
         //for 12 hour time do: "h:mm a"
-        DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hhmm"); //in military time
+        DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mm"); //in military time
         LocalDateTime now = LocalDateTime.now();
         return timeFormat.format(now);
     }
 
-    public int timeToInt(String time, boolean currTime) {
+    public int timeToInt(String time) {
         int timeInt;
         String temp = "";
 
-        if(!currTime) { //this is for the case where i need to convert the selected time to int
-            String s[] = time.split(":");
-            for(String w:s) {
-                temp += w;
-            }
-            timeInt = Integer.parseInt(temp);
+        String s[] = time.split(":");
+        for(String w:s) {
+            temp += w;
         }
-        else { //this is where i need to convert current time to int
-            timeInt = Integer.parseInt(time);
-        }
+        timeInt = Integer.parseInt(temp);
 
         return timeInt;
     }

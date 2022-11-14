@@ -9,7 +9,7 @@
 
 <!--fx:controller="com.example.phase3.PizzaTypeController"-->
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Text layoutX="324.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Pizza Type">
             <font>
@@ -32,17 +32,17 @@
             <Font size="30.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="vegCheck" layoutX="369.0" layoutY="290.0" mnemonicParsing="false" onAction="#vegetable" text="Vegetable">
+      <CheckBox fx:id="vegCheck" layoutX="368.0" layoutY="322.0" mnemonicParsing="false" onAction="#vegetable" text="Vegetable">
          <font>
             <Font size="30.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="cheeseCheck" layoutX="368.0" layoutY="371.0" mnemonicParsing="false" onAction="#cheese" text="Cheese">
+      <CheckBox fx:id="cheeseCheck" layoutX="368.0" layoutY="441.0" mnemonicParsing="false" onAction="#cheese" text="Cheese">
          <font>
             <Font size="30.0" />
          </font>
       </CheckBox>
-      <Text fx:id="errorType" fill="#c73535" layoutX="651.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="216.8489990234375">
+      <Text fx:id="errorType" fill="#e41e1e" layoutX="651.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="216.8489990234375">
          <font>
             <Font size="16.0" />
          </font>

@@ -8,19 +8,18 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.phase3.IncomingController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.phase3.IncomingController">
     <children>
         <Text layoutX="328.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Incoming Orders">
             <font>
                 <Font size="50.0" />
             </font>
         </Text>
-        <Button layoutX="697.0" layoutY="592.0" mnemonicParsing="false" onAction="#switchToAccept" text="Chef View">
+        <Button layoutX="672.0" layoutY="600.0" mnemonicParsing="false" onAction="#switchToAccept" text="Chef View">
             <font>
                 <Font size="20.0" />
             </font></Button>
         <Separator layoutX="328.0" layoutY="104.0" prefHeight="2.0" prefWidth="369.0" />
-        <Text layoutX="688.0" layoutY="566.0" strokeType="OUTSIDE" strokeWidth="0.0" text="this is a Table View" />
       <TableView fx:id="table" layoutX="279.0" layoutY="135.0" prefHeight="389.0" prefWidth="451.0">
         <columns>
           <TableColumn prefWidth="75.0" text="C1" />

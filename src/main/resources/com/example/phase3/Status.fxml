@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Text layoutX="325.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Confirmed">
             <font>
@@ -14,9 +14,9 @@
             </font>
         </Text>
         <Separator layoutX="319.0" layoutY="127.0" prefHeight="1.0" prefWidth="386.0" />
-        <Button layoutX="237.0" layoutY="503.0" mnemonicParsing="false" onAction="#switchToPizza" prefHeight="86.0" prefWidth="188.0" text="Order More">
+        <Button layoutX="250.0" layoutY="572.0" mnemonicParsing="false" onAction="#switchToPizza" prefHeight="60.0" prefWidth="150.0" text="Order More">
             <font>
-                <Font size="20.0" />
+                <Font size="18.0" />
             </font>
         </Button>
         <Text layoutX="381.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status:" textAlignment="CENTER" wrappingWidth="239.333984375">
@@ -29,9 +29,9 @@
             <Font size="30.0" />
          </font>
       </Text>
-      <Button layoutX="512.0" layoutY="503.0" mnemonicParsing="false" onAction="#refreshStatus" prefHeight="86.0" prefWidth="224.0" text="Refresh">
+      <Button layoutX="624.0" layoutY="572.0" mnemonicParsing="false" onAction="#refreshStatus" prefHeight="60.0" prefWidth="150.0" text="Refresh">
          <font>
-            <Font size="20.0" />
+            <Font size="18.0" />
          </font>
       </Button>
     </children>

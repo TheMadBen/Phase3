@@ -9,35 +9,35 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.phase3.AcceptController">
+<AnchorPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.phase3.AcceptController">
     <children>
         <Text layoutX="328.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Accepted Orders">
             <font>
                 <Font size="50.0" />
             </font>
         </Text>
-        <Button fx:id="setToCook" layoutX="534.0" layoutY="598.0" mnemonicParsing="false" onAction="#setCook" text="Set to Cook">
+        <Button fx:id="setToCook" layoutX="553.0" layoutY="598.0" mnemonicParsing="false" onAction="#setCook" text="Set to Cook">
          <font>
             <Font size="20.0" />
          </font></Button>
         <Separator layoutX="328.0" layoutY="104.0" prefHeight="2.0" prefWidth="369.0" />
-      <TableView fx:id="table" layoutX="29.0" layoutY="176.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="475.0">
+      <TableView fx:id="table" layoutX="70.0" layoutY="176.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="475.0">
         <columns>
           <TableColumn prefWidth="75.0" text="C1" />
           <TableColumn prefWidth="75.0" text="C2" />
         </columns>
       </TableView>
-      <Button layoutX="247.0" layoutY="598.0" mnemonicParsing="false" onAction="#switchToSeeOrder" prefHeight="39.0" prefWidth="163.0" text="View Order">
+      <Button layoutX="302.0" layoutY="598.0" mnemonicParsing="false" onAction="#switchToSeeOrder" prefHeight="39.0" prefWidth="163.0" text="View Order">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="57.0" layoutY="598.0" mnemonicParsing="false" onAction="#refresh" prefHeight="39.0" prefWidth="146.0" text="Refresh">
+      <Button layoutX="70.0" layoutY="598.0" mnemonicParsing="false" onAction="#refresh" prefHeight="39.0" prefWidth="146.0" text="Refresh">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <TextArea fx:id="orderDisplay" editable="false" layoutX="575.0" layoutY="179.0" prefHeight="384.0" prefWidth="322.0" />
-      <Button fx:id="setReady" layoutX="697.0" layoutY="598.0" mnemonicParsing="false" onAction="#setReady" prefHeight="39.0" prefWidth="163.0" text="Order is Ready">
+      <TextArea fx:id="orderDisplay" editable="false" layoutX="618.0" layoutY="179.0" prefHeight="384.0" prefWidth="322.0" />
+      <Button fx:id="setReady" layoutX="776.0" layoutY="598.0" mnemonicParsing="false" onAction="#setReady" prefHeight="39.0" prefWidth="163.0" text="Order is Ready">
          <font>
             <Font size="20.0" />
          </font>

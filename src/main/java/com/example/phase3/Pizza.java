@@ -18,23 +18,23 @@ public class Pizza {
     public String pizzaToString() {
         String output = "Pizza Type: ";
 
-        if(pepperoni) output += "pepperoni ";
+        if(pepperoni) output += "Pepperoni ";
 
-        if(vegetables) output += "vegetable";
+        if(vegetables) output += "Vegetable";
 
-        if(cheese) output += "cheese";
+        if(cheese) output += "Cheese";
 
         output += "\nToppings: ";
 
-        if(mushroom) output += "mushroom ";
+        if(mushroom) output += "Mushroom ";
 
-        if(onion) output += "onion ";
+        if(onion) output += "Onion ";
 
-        if(olives) output += "olives ";
+        if(olives) output += "Olives ";
 
-        if(extraCheese) output += "extra cheese ";
+        if(extraCheese) output += "Extra cheese ";
 
-        if(!mushroom && !onion && !olives && !extraCheese) output+= "none added";
+        if(!mushroom && !onion && !olives && !extraCheese) output+= "None added";
 
         output += "\n";
 
