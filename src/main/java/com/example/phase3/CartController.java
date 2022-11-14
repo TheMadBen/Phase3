@@ -71,7 +71,7 @@ public class CartController {
 
 
     public void setTable(ActionEvent event) throws IOException{
-        TableColumn<Pizza, String> column1 = new TableColumn<>("Pizza ingredients");
+        TableColumn<Pizza, String> column1 = new TableColumn<>("Pizza Ingredients");
         column1.setCellValueFactory(new PropertyValueFactory<>("output"));
 
         TableColumn<Pizza, String> column2 = new TableColumn<>("CheckBox");

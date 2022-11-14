@@ -24,7 +24,7 @@ public class Pizza {
 
         if(cheese) output += "Cheese";
 
-        output += "\nToppings: ";
+        output += "\n\nToppings: ";
 
         if(mushroom) output += "Mushroom ";
 
