@@ -32,9 +32,9 @@ public class SeeOrderController {
 
         //scene.getRoot().add(table);
 
-        System.out.println("Table Set");
+        //System.out.println("Table Set");
         for (Pizza pizza : order.getCart()) {
-            System.out.println("Ran");
+            //System.out.println("Ran");
             table.getItems().add(pizza.pizzaToString());
         }
 

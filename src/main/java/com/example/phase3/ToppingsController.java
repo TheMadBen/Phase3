@@ -39,7 +39,7 @@ public class ToppingsController {
     public void mushroom(ActionEvent event) {
         if(mushroomCheck.isSelected()) {
             pizza.setMushroom(true);
-            //System.out.println(pizza.isPepperoni());
+            // System.out.println(pizza.isPepperoni());
         }
         else {
             pizza.setMushroom(false);
